@@ -68,9 +68,7 @@ view : Signal.Address Action -> Model -> Html
 view address model =
   div []
     [ textarea
-      -- I'm a bit uncertain what composing address and Change does
       [ on "keyup" targetValue <| Signal.message address << Change
-      --                                                 ^^
       , style <| ("border", "none") :: elemStyles
       ]
       [ text initialText ]
